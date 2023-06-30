@@ -2,7 +2,7 @@ package br.com.portoseguro.authfy.camera.presentation.entry
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import br.com.portoseguro.portobot.koin.KoinTestRule
-import br.com.portoseguro.portobot.robot.ActivityRobot
+import br.com.portoseguro.portobot.robot.{{choose_type}}Robot
 import br.com.portoseguro.portobot.robot.ext.completeDef
 import br.com.portoseguro.portobot.robot.ext.launch
 import org.junit.Rule

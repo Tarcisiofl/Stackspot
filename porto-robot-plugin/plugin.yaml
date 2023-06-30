@@ -1,0 +1,33 @@
+schema-version: v1
+kind: plugin
+metadata:
+  name: porto-robot-plugin
+  display-name: porto-robot-plugin
+  description: Criar estrutura de arquivos de teste Porto Robot
+  version: 0.0.1
+  picture: plugin.png
+spec:
+  type: app
+  compatibility:
+    - python
+  about: docs/about.md
+  implementation: docs/implementation.md
+  release-notes: docs/release-notes-0.0.1.md
+  requirements: docs/requirements.md
+  technologies: # Ref: https://docs.stackspot.com/content-creator/studio/yaml-files/plugin-yaml/#technologies
+    - Api
+  inputs:
+    - label: Choose Activity or Fragment
+      name: choose-type
+      type: text
+      items:
+        - ACTIVITY
+        - FRAGMENT
+      default: ACTIVITY
+      required: true
+      help: 'Inform the type of the test class'
+    - label: Activity or Fragment name
+      name: enter-name
+      type: text
+      required: true
+      help: 'Inform the name of the class'

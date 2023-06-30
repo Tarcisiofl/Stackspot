@@ -18,16 +18,16 @@ spec:
     - Api
   inputs:
     - label: Choose Activity or Fragment
-      name: choose-type
+      name: choose_type
       type: text
       items:
-        - ACTIVITY
-        - FRAGMENT
-      default: ACTIVITY
+        - Activity
+        - Fragment
+      default: Activity
       required: true
       help: 'Inform the type of the test class'
     - label: Activity or Fragment name
-      name: enter-name
+      name: enter_name
       type: text
       required: true
       help: 'Inform the name of the class'

@@ -4,7 +4,7 @@ metadata:
   name: porto-robot-plugin
   display-name: porto-robot-plugin
   description: Criar estrutura de arquivos de teste Porto Robot
-  version: 0.0.1
+  version: 0.0.2
   picture: plugin.png
 spec:
   type: app
@@ -14,20 +14,42 @@ spec:
   implementation: docs/implementation.md
   release-notes: docs/release-notes-0.0.1.md
   requirements: docs/requirements.md
-  technologies: # Ref: https://docs.stackspot.com/content-creator/studio/yaml-files/plugin-yaml/#technologies
-    - Api
+  technologies:
+    - Android
   inputs:
+    - label: Enter the package name
+      name: package_name
+      type: text
+      default: "br.com.portoseguro"
+
+    - label: Enter the module name
+      name: module_name
+      type: text
+      required: true
+      help: 'Inform module name. Eg: vehicledebt'
+
+    - label: Enter the feature name
+      name: feature_name
+      type: text
+      required: true
+      help: 'Inform the feature name beign tested. eg: debtlist'
+
     - label: Choose Activity or Fragment
       name: choose_type
       type: text
       items:
         - Activity
         - Fragment
-      default: Activity
       required: true
       help: 'Inform the type of the test class'
-    - label: Activity or Fragment name
-      name: enter_name
+
+    - label: Enter the full class name
+      name: class_name
       type: text
       required: true
-      help: 'Inform the name of the class'
+      help: 'Inform the name of the class. eg: VehicleDebtsFragment'
+
+  computed-inputs:
+    choose_type_lower: "{{choose_type|lower}}"
+    feature_name_lower: "{{feature_name|lower}}"
+    full_package_path: "{{package_name|replace('.', '/')}}/{{module_name|replace('.', '/')}}"
